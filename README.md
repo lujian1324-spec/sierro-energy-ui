@@ -1,2 +1,8 @@
-# sierro-energy-ui
-Independent Sierro Energy Figma-matched web UI (UI-only, separate from energy-app)
+# Sierro Energy UI
+
+Pixel-matched Vite React TS UI (402x874).
+
+Routes: /login /devices /devices/empty /device/:id /insights /setting
+
+npm install
+npm run build

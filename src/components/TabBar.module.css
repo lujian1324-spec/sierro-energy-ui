@@ -1,0 +1,44 @@
+.wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 40;
+}
+.bar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: var(--primary-darker);
+  border: 0.5px solid var(--primary);
+  border-radius: 1000px;
+}
+.item {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.55);
+}
+.itemActive {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
+.hl {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  display: grid;
+  place-items: center;
+}

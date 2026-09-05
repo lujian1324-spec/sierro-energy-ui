@@ -1,0 +1,30 @@
+.wrap {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.svg { position: absolute; inset: 0; }
+.center { text-align: center; position: relative; z-index: 1; }
+.pctRow { display: flex; align-items: flex-start; justify-content: center; gap: 2px; }
+.value {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 42px;
+  color: #fff;
+  line-height: 1;
+}
+.unit {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--black-5);
+  margin-top: 8px;
+}
+.remain {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--black-5);
+}

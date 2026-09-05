@@ -1,0 +1,25 @@
+.bar {
+  height: var(--status-h);
+  padding: 14px 24px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  color: #fff;
+  position: relative;
+  z-index: 5;
+}
+.time {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+  line-height: 1;
+  padding-top: 2px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 2px;
+}

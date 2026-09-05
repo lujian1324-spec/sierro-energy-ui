@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/sierro-energy-ui/sw.js', { scope: '/sierro-energy-ui/' })})}

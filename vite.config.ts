@@ -1,14 +1,29 @@
-import react from "@vitejs/plugin-react"
+﻿import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { VitePWA } from "vite-plugin-pwa"
 
+const cdn = {
+  react: "https://esm.sh/react@19.2.8",
+  "react-dom": "https://esm.sh/react-dom@19.2.8",
+  "react-dom/client": "https://esm.sh/react-dom@19.2.8/client",
+  "react-router": "https://esm.sh/react-router@7.18.3",
+  "react-router/dom": "https://esm.sh/react-router@7.18.3/dom",
+  "react-router-dom": "https://esm.sh/react-router-dom@7.18.3",
+}
+
 export default defineConfig({
   base: "/sierro-energy-ui/",
+  build: {
+    rollupOptions: {
+      external: Object.keys(cdn),
+      output: { paths: cdn },
+    },
+  },
   plugins: [
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "apple-touch-icon.png", "pwa-192x192.png", "pwa-512x512.png"],
+      includeAssets: ["favicon.svg"],
       manifest: {
         name: "Sierro Energy",
         short_name: "Sierro",
@@ -19,12 +34,23 @@ export default defineConfig({
         start_url: "./",
         scope: "/sierro-energy-ui/",
         icons: [
-          { src: "pwa-192x192.png", sizes: "192x192", type: "image/png" },
-          { src: "pwa-512x512.png", sizes: "512x512", type: "image/png" },
-          { src: "pwa-512x512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+          { src: "favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+          { src: "favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
         ],
       },
-      workbox: { globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2,webmanifest}"] },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,svg,webmanifest}"],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/esm\.sh\/.*/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "esm-cdn",
+              expiration: { maxEntries: 32, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
+        ],
+      },
     }),
   ],
 })

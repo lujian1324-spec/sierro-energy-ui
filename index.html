@@ -1,24 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/sierro-energy-ui/public/favicon.svg" />
-    <link rel="apple-touch-icon" href="/sierro-energy-ui/public/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#141414" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Sierro" />
-    <title>Sierro Energy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" crossorigin href="/sierro-energy-ui/assets/index-D7ZyPXbr.css">
-    <link rel="manifest" href="/sierro-energy-ui/manifest.webmanifest">
-    <script id="vite-plugin-pwa:register-sw" src="/sierro-energy-ui/registerSW.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="/sierro-energy-ui/assets/boot-gz.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#141414" />
+  <title>Sierro Energy — deploy pending</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <style>
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:#141414;color:#f5f5f5;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    main{max-width:36rem;padding:2rem;line-height:1.5}
+    code{background:#262626;padding:.1rem .35rem;border-radius:4px}
+    a{color:#01d6be}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Sierro Energy PWA</h1>
+    <p>Source + PWA config are on <code>main</code>. Full <code>dist/</code> deploy is blocked until GitHub Actions workflow scope is granted (or you publish <code>dist</code> manually).</p>
+    <ol>
+      <li>Push <code>.github/workflows/pages.yml</code> from the local project (token needs <code>workflow</code> scope).</li>
+      <li>Repo → Settings → Pages → Source: <strong>GitHub Actions</strong>.</li>
+      <li>Private repos need GitHub Pro for Pages, or make the repo public.</li>
+    </ol>
+    <p>Local preview: <code>npm run build && npx vite preview</code></p>
+  </main>
+</body>
 </html>

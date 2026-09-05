@@ -1,0 +1,112 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  min-height: 0;
+  position: relative;
+}
+.sheet {
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+  border-radius: 12px 12px 0 0;
+  margin-top: -2px;
+  padding: 16px 16px 120px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  border-radius: var(--radius-l);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.cardBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+.model {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--black-3);
+  margin-top: 4px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--black-9);
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.tagDisconnected {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--red-darker);
+  color: var(--red-light);
+}
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 24px 8px 40px;
+}
+.emptyImg { width: 200px; height: 200px; object-fit: contain; }
+.emptyTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black-3);
+}
+.emptySub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--black-5);
+  max-width: 300px;
+  line-height: 1.4;
+}
+.cta {
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-m);
+  border: 1.3px solid var(--primary);
+  color: var(--primary);
+  font-family: var(--font-public);
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
